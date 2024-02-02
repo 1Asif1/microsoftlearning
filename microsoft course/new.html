@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <title>index</title>
+</head>
+<body>
+    <h1 id="hi">HI</h1>
+    <ol>
+    <li>contact us</li>
+    <li>info</li>
+    <li>about us</li>
+    </ol>
+    <button id="id1" style="background-color: rgb(0, 255, 255); border-radius: 50px; border: 0cap; font-size: 50px; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; ;" onclick="handle()" ondblclick="dbhandle()">Click</button>
+    <button id="id2" style="background-color: rgb(0, 255, 255); border-radius: 50px; border: 0cap; font-size: 50px; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; ;" onclick="sizehandle()" ondblclick="sizeless()" onmouseover="hovercursor()" onmouseout="hovercancel()">Change Size</button>
+    <input id="colorpicker" type="color" onchange="changebg()"><br>
+    <input type="text" id="typer" onkeypress="display()" style="margin-top: 25px; border-radius: 50px;font-size: 20px;background-color: rgba(85, 168, 168, 0.71);border: 0cap;"><br>
+    <p id="displayer"></p>
+    <a id="links" href="https://www.youtube.com/">about us</a>
+    <script>
+        function handle(){
+            console.log("HI you clicked?");
+            document.getElementById('hi').innerText="You clicked";
+            
+            var body=document.body;
+            body.style.backgroundColor="rgb(0, 255, 255,0.2)";
+            var button=document.getElementById('id1');
+            button.style.margin= "50px";
+            button.style.transition="0.8s";
+            body.style.transition="0.5s";
+            
+        }
+        function dbhandle(){
+            document.getElementById('hi').innerText="You doubleclicked";
+            var h1=document.getElementById('hi');
+            h1.style.fontFamily="cursive";
+            var body=document.body;
+            body.style.backgroundColor="green";
+            var button=document.getElementById('id1');
+            button.style.margin= "0px";
+            button.style.transition="0.8s";
+            body.style.transition="0.5s";
+        }
+        function sizehandle(){
+            var h1=document.getElementById("hi");
+            h1.style.fontSize="100px";
+            h1.style.transition="0.5s";
+        }
+        function sizeless(){
+            var h1=document.getElementById("hi");
+            h1.style.fontSize="50px";
+            h1.style.transition="0.5s";
+        }
+        function changebg(){
+            var value=document.getElementById("colorpicker").value;
+            document.body.style.backgroundColor=value;
+        }
+        function display(){
+            var value=document.getElementById("typer").value;
+            document.getElementById("displayer").innerText=value;
+
+        }
+        function hovercursor(){
+            var button=document.getElementById("id2");
+            button.style.backgroundColor="red";
+            button.style.transition="0.46s"
+        }
+        function hovercancel(){
+            var button=document.getElementById("id2");
+            button.style.backgroundColor="rgb(0, 255, 255)";
+        }
+        document.getElementById("links").addEventListener("mouseover",function(){
+            alert("Abhi youtube mat chala bhai");})
+    </script>
+    
+</body>
+</html>
